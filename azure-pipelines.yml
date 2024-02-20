@@ -34,13 +34,12 @@ stages:
         repository: '$(imageRepository)'
         command: 'build'
         Dockerfile: 'website/dockerfile'
-        tags: '$(tag)'
+        tags: 'latest'
     - task: Docker@2
       displayName: Push
       inputs:
         containerRegistry: 'ncpl-cr'
         repository: '$(imageRepository)'
         command: 'push'
-        tags: 'latest'
         
  
