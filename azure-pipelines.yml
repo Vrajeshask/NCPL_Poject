@@ -28,11 +28,19 @@ stages:
     pool: Default
     steps:
     - task: Docker@2
-      displayName: Build and push an image to container registry
+      displayName: Build 
       inputs:
         containerRegistry: '$(dockerRegistryServiceConnection)'
         repository: '$(imageRepository)'
         command: 'build'
         Dockerfile: 'website/dockerfile'
         tags: '$(tag)'
+    - task: Docker@2
+      displayName: Push
+      inputs:
+        containerRegistry: 'ncpl-cr'
+        repository: '$(imageRepository)'
+        command: 'push'
+        tags: '$(tag)'
+        
  
