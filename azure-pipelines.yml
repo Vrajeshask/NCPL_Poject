@@ -30,7 +30,7 @@ stages:
     - task: Docker@2
       displayName: Build 
       inputs:
-        containerRegistry: '$(dockerRegistryServiceConnection)'
+        containerRegistry: 'ncpl-cr'
         repository: '$(imageRepository)'
         command: 'build'
         Dockerfile: 'website/dockerfile'
