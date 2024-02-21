@@ -2,7 +2,7 @@
 FROM nginx:latest
 
 # Copy the website content into the NGINX default directory
-COPY index.html .
+COPY index.html /usr/share/nginx/html/index.html
 
 # Expose port 80 to make the website accessible outside the container
 EXPOSE 80
