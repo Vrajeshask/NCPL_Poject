@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-app-deployment
 spec:
-  replicas: 3  # Number of desired replicas (pods)
+  replicas: 2  # Number of desired replicas (pods)
   selector:
     matchLabels:
       app: my-app  # Selector to match the pods controlled by this deployment
@@ -14,6 +14,12 @@ spec:
     spec:
       containers:
       - name: my-app-container  # Name of the container
-        image: ncplcr.azurecr.io/ncplproject:latest  # Docker image to use
+        image: ncplcr.azurecr.io/ncpl_project:latest  # Docker image to use
+        imagePullPolicy: Always #by this everytime there will be a new image
         ports:
         - containerPort: 80  # Port the container exposes
+    strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
