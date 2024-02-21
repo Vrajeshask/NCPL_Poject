@@ -18,7 +18,7 @@ spec:
         imagePullPolicy: Always #by this everytime there will be a new image
         ports:
         - containerPort: 80  # Port the container exposes
-    strategy:
+  strategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
