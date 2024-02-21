@@ -9,4 +9,4 @@ spec:
     - protocol: TCP
       port: 80  # Port on the service
       targetPort: 80  # Port on the pods
-  type: ClusterIP  # Exposes the service internally within the cluster
+  type: LoadBalancer  # Exposes the service internally within the cluster
