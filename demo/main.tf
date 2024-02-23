@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "East US"
+resource "azurerm_resource_group" "ncpl-demo" {
+  name     = "ncpl-demo"
+  location = "eastus"
 }
