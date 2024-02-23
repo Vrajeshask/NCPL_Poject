@@ -7,15 +7,6 @@ resource "azurerm_resource_group" "ncpl-rg" {
   location = "eastus"
 }
 
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "East US"
-}
-
 resource "azurerm_container_registry" "ncplcr" {
   name                     = "ncplcr"
   resource_group_name      = azurerm_resource_group.example.name
