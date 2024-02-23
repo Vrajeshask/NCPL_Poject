@@ -34,4 +34,3 @@ resource "azurerm_container_registry" "ncplcr" {
   }
 }
 
-}
