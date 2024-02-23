@@ -2,10 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "ncpl-rg" {
-  name     = "ncpl-rg"
-  location = "eastus"
-}
+
 
 resource "azurerm_container_registry" "ncplcr" {
   name                     = "ncplcr"
